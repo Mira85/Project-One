@@ -21,6 +21,9 @@ function handleSubmit(evt) {
         countryData = JSON.parse(data);
         // success callback function
         console.log(countryData);
+
+
+
         render();
     }, function (error) {
         // failure callback function
@@ -32,15 +35,51 @@ function handleSubmit(evt) {
 function render() {
     $main.html(`
 <h3>${countryData.names.name}</h3>
-<p id="advise"> Advise: ${countryData.advise.UA.advise}</p>
-<p id="currency"> Currency: ${countryData.currency.name}</p>
-<p id="currency">Currency Rate: ${countryData.currency.rate}</p>
-<p id="calling-code"> Calling Code: ${countryData.telephone.calling_code}</p>
-
-
+<div id="advise"> Advise: ${countryData.advise.UA.advise}</div>
+<div id="currency"> Currency: ${countryData.currency.name}</div>
+<div id="currency">Currency Rate: ${countryData.currency.rate}</div>
+<div id="calling-code"> Calling Code: ${countryData.telephone.calling_code}</div>
+<div id="vaccination-req"> Vaccination Requirement:${loopingVaccinationData()} </div>
+<div id="temperature"> Temperature: ${hanldleTemperature()}</div>
 `);
-
 }
 
-/*<p id="vaccination-req">${countryData.vaccination}</p>
-<p id="weather">${countryData.Rated}</p>*/
+let vaccinationData= "";
+
+function loopingVaccinationData() {
+    
+    if (countryData.vaccinations.length === 0) {
+        return 'No data available'
+    } else {
+        countryData.vaccinations.forEach(function(element) {
+        let elementData = `<p>${element.name}: ${element.message}</p>`; 
+          vaccinationData = elementData + vaccinationData;
+            console.log(elementData);
+        }) 
+    }
+    return vaccinationData;
+}
+
+
+
+function hanldleTemperature (){
+    let desiredTempMonths = "";
+    let weatherObj = countryData.weather;
+    for (const property in weatherObj) {
+        console.log(property);
+        let tempCel = (countryData.weather[property]); 
+        let tavg = parseFloat(tempCel.tAvg);
+        // conversion of temperature values from celcius to farenheit
+        tempFahr = Math.round(tavg * 9/5 + 32);
+        if (tempFahr >= 60 )  {
+            let warmMonths = `<p> ${property}</p>`;
+            desiredTempMonths = desiredTempMonths + warmMonths;
+        }
+
+        console.log(tempFahr)
+    }
+    return desiredTempMonths
+ 
+} 
+  
+
