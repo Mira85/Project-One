@@ -1,3 +1,106 @@
-h1{
-  
+header{
+    border: solid black;
+    text-align: center;
+
+}
+
+h3{
+    border: solid black;
+
+}
+
+main{
+display: flex;
+flex-wrap: wrap;
+flex-direction: column;
+border: solid black;
+row-gap: 50px;
+
+}
+
+form {
+ border: solid black;
+
+}
+div{
+    display:flex;
+    /*border:solid yellow;*/
+    flex-direction:column;
+}
+
+#temperature{
+    border: solid red;
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+
+#advise {
+    border: solid blue;
+    display: flex;
+    flex-grow: 1;
+    text-align: center;
+}
+#currency {
+    border: solid blue;
+    display: flex;
+    flex-grow: 1;
+    text-align: center;
+   
+}
+
+#currency-rate {
+    border: solid blue;
+    display: flex;
+    flex-grow: 1;
+    text-align: center;
+    
+}
+
+#calling-code {
+    border: solid blue;
+    display: flex;
+    flex-grow: 1;
+    text-align: center;
+   
+
+}
+
+#vaccination-req {
+    border: solid red;
+    display: flex;
+    flex-direction: column;
+
+}
+
+footer {
+    border: solid black;
+    text-align:center;
+}
+   
+p {
+    
+    
+    /*border: solid green;*/
+    margin: 0;
+}
+
+#sub-section {
+    display:flex;
+    flex-wrap: wrap;
+    border: solid brown;
+    column-gap: 30px;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+
+    
+}
+
+.header {
+    font-weight: bold;
+    font-family: Helvetica;
+    background-color: rgb(187, 155, 218);
 }

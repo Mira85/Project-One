@@ -35,43 +35,59 @@ function handleSubmit(evt) {
 function render() {
     $main.html(`
 <h3>${countryData.names.name}</h3>
-<div id="advise"> Advise: ${countryData.advise.UA.advise}</div>
-<div id="currency"> Currency: ${countryData.currency.name}</div>
-<div id="currency">Currency Rate: ${countryData.currency.rate}</div>
-<div id="calling-code"> Calling Code: ${countryData.telephone.calling_code}</div>
-<div id="vaccination-req"> Vaccination Requirement:${loopingVaccinationData()} </div>
-<div id="temperature"> Temperature: ${hanldleTemperature()}</div>
+<section id="temperature"> <div class="header">Warm Months</div><div class="content"> ${hanldleTemperature()}</div></section>
+<section id="sub-section"> 
+    <div id="advise" class="subSection"> 
+        <div class="header">Advise</div>
+        <div class="content"> ${countryData.advise.UA.advise}</div>
+    </div>  
+    <div id="currency" class="subSection">
+        <div class="header">Currency</div>
+        <div class="content"> ${countryData.currency.name}</div>
+    </div>
+    <div id="currency-rate" class="subSection">
+        <div class="header">Currency Rate</div>
+        <div class="content"> ${countryData.currency.rate}</div>
+    </div>
+    <div id="calling-code" class="subSection"> 
+    <div class="header">Calling Code</div>
+    <div class="content"> ${countryData.telephone.calling_code}</div>
+    </div>
+</section>
+<section id="vaccination-req"> <div class="header">Vaccination Requirement</div><div class="content">${loopingVaccinationData()}</div> </section>
+
+
 `);
 }
 
-let vaccinationData= "";
+let vaccinationData = "";
 
 function loopingVaccinationData() {
-    
+
     if (countryData.vaccinations.length === 0) {
         return 'No data available'
     } else {
-        countryData.vaccinations.forEach(function(element) {
-        let elementData = `<p>${element.name}: ${element.message}</p>`; 
-          vaccinationData = elementData + vaccinationData;
+        countryData.vaccinations.forEach(function (element) {
+            let elementData = `<p>${element.name}: ${element.message}</p>`;
+            vaccinationData = elementData + vaccinationData;
             console.log(elementData);
-        }) 
+        })
     }
     return vaccinationData;
 }
 
 
 
-function hanldleTemperature (){
+function hanldleTemperature() {
     let desiredTempMonths = "";
     let weatherObj = countryData.weather;
     for (const property in weatherObj) {
         console.log(property);
-        let tempCel = (countryData.weather[property]); 
+        let tempCel = (countryData.weather[property]);
         let tavg = parseFloat(tempCel.tAvg);
         // conversion of temperature values from celcius to farenheit
-        tempFahr = Math.round(tavg * 9/5 + 32);
-        if (tempFahr >= 60 )  {
+        tempFahr = Math.round(tavg * 9 / 5 + 32);
+        if (tempFahr >= 60) {
             let warmMonths = `<p> ${property}</p>`;
             desiredTempMonths = desiredTempMonths + warmMonths;
         }
@@ -79,7 +95,7 @@ function hanldleTemperature (){
         console.log(tempFahr)
     }
     return desiredTempMonths
- 
-} 
-  
+
+}
+
 
