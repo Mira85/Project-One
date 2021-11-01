@@ -1,25 +1,61 @@
-header{
-    border: solid black;
-    text-align: center;
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
 
+header{
+    text-align: center;
+    background-color: #04409b;
+    height: 5rem;
+    color: white;
+    padding:10px;
+    font-family:Helvetica, sans-serif;
+    font-size: 25px;
+    
+}
+
+label {
+    font-weight: bold;
+    color: black;
+    font-size: 20px;
 }
 
 h3{
-    border: solid black;
+    
+    text-align: center;
+    height: 50px;
+    color: #04409b;
+    padding:10px;
+    font-size:28px;
+}
 
+
+
+body{
+min-height: 100vh;
+font-family: Helvetica;
+display: flex;
+flex-direction: column;
 }
 
 main{
 display: flex;
 flex-wrap: wrap;
-flex-direction: column;
-border: solid black;
-row-gap: 50px;
+flex-direction: row;
+justify-content:space-around;
+align-items:center;
+height:30rem;
+flex-grow: 1;
+color: #999999;
+font-family:Helvetica;
 
 }
 
 form {
- border: solid black;
+ height:50px;
+ align-items: center;
+ padding:10px;
+ color:#5680E9;
 
 }
 div{
@@ -29,78 +65,154 @@ div{
 }
 
 #temperature{
-    border: solid red;
+ 
+    border: solid grey;
     display: flex;
+    text-align: center;
     flex-direction: column;
-
+    border-radius: 5px;
+    box-shadow: 5px 3px 5px grey;
+    width: 18.75rem;
+    height: 15.0rem;
+    overflow: scroll;
 }
 
 
 
 #advise {
-    border: solid blue;
+    border: solid grey;
     display: flex;
-    flex-grow: 1;
+    flex-direction: column;
     text-align: center;
+    border-radius: 5px;
+    width: 18.75rem;
+    height: 15.0rem;
+    box-shadow: 5px 3px 5px grey;
+   
 }
 #currency {
-    border: solid blue;
+    border: solid grey;
     display: flex;
-    flex-grow: 1;
+    flex-direction: column;
     text-align: center;
-   
+    border-radius: 5px;
+    width: 18.75rem;
+    height: 15.0rem;
+    box-shadow: 5px 3px 5px grey;
+    
 }
 
 #currency-rate {
-    border: solid blue;
+    border: solid grey;
     display: flex;
-    flex-grow: 1;
     text-align: center;
+    border-radius: 5px;
+    width: 18.75rem;
+    height: 15.0rem;
+    box-shadow: 5px 3px 5px grey;
     
 }
+    
+
 
 #calling-code {
-    border: solid blue;
+    border: solid grey;
     display: flex;
-    flex-grow: 1;
+    flex-direction: column;
     text-align: center;
-   
-
+    border-radius: 5px;
+    width: 18.75rem;
+    height: 15.0rem;
+    box-shadow: 5px 3px 5px grey;
+    
 }
 
 #vaccination-req {
-    border: solid red;
+    border: solid grey;
     display: flex;
     flex-direction: column;
-
-}
-
-footer {
-    border: solid black;
-    text-align:center;
-}
+    text-align: center;
+    border-radius: 5px;
+    width: 18.75rem;
+    height: 15.0rem;;
+    overflow: scroll;
+    box-shadow: 5px 3px 5px grey;
    
+
+}
+
+ 
 p {
-    
-    
-    /*border: solid green;*/
     margin: 0;
 }
 
-#sub-section {
-    display:flex;
-    flex-wrap: wrap;
-    border: solid brown;
-    column-gap: 30px;
-    height: 100px;
-    justify-content: center;
-    align-items: center;
 
-    
-}
 
 .header {
     font-weight: bold;
     font-family: Helvetica;
-    background-color: rgb(187, 155, 218);
+   /* margin-top:10px;*/
+    margin-bottom:18px;
+    color: black;
+    background-color: #F2F2F2;
+    height:fit-content;
+}
+
+#currencyRateHdr {
+    margin-top: 60px;
+}
+
+#submit {
+    background-color: #418cfc;
+    color: white; 
+    border: none;
+    padding:3px 19px;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: Helvetica, sans-serif;
+    cursor: pointer;
+    height: 32px;
+}
+
+#inputCountry{
+    border:solid #418cfc;
+    width:180px;
+    height: 30px;
+    
+   }
+
+footer {
+    border: solid black;
+    text-align:center;
+    color: white;
+    background-color: #04409b;
+}
+  
+
+
+
+
+@media (max-width: 764px) {
+    main {
+        flex-direction: column;
+    }
+    #temperature{
+        width:auto;
+        height:auto;
+    }
+    #advise {
+        width:auto;
+        height:auto;
+    }
+
+    #currency {
+        width:auto;
+        height:auto;
+    
+    }
+
+    currency-rate{
+        width:auto;
+        height:auto;   
+    }
 }

@@ -7,6 +7,8 @@ let country;
 const $form = $('form');
 const $inputCountry = $('#inputCountry');
 const $main = $('main');
+const $selectedCountry = $('#selectedCountry');
+console.log($selectedCountry);
 // Event Listeners
 $form.on('submit', handleSubmit);
 // Functions
@@ -33,29 +35,24 @@ function handleSubmit(evt) {
 }
 
 function render() {
+    $selectedCountry.html(`<h3>${countryData.names.name}</h3>`);
     $main.html(`
-<h3>${countryData.names.name}</h3>
 <section id="temperature"> <div class="header">Warm Months</div><div class="content"> ${hanldleTemperature()}</div></section>
-<section id="sub-section"> 
-    <div id="advise" class="subSection"> 
+<section id="advise"> 
         <div class="header">Advise</div>
         <div class="content"> ${countryData.advise.UA.advise}</div>
-    </div>  
-    <div id="currency" class="subSection">
+    </section>  
+<section id="currency" class="subSection">
         <div class="header">Currency</div>
         <div class="content"> ${countryData.currency.name}</div>
-    </div>
-    <div id="currency-rate" class="subSection">
-        <div class="header">Currency Rate</div>
+        <div id="currencyRateHdr" class="header">Currency Rate</div>
         <div class="content"> ${countryData.currency.rate}</div>
-    </div>
-    <div id="calling-code" class="subSection"> 
+    </section>
+<section id="calling-code" class="subSection"> 
     <div class="header">Calling Code</div>
     <div class="content"> ${countryData.telephone.calling_code}</div>
-    </div>
-</section>
+    </section>
 <section id="vaccination-req"> <div class="header">Vaccination Requirement</div><div class="content">${loopingVaccinationData()}</div> </section>
-
 
 `);
 }
