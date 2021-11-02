@@ -6,7 +6,8 @@ let country;
 // Cached Element References
 const $form = $('form');
 const $inputCountry = $('#inputCountry');
-const $main = $('main');
+/*const $main = $('main');*/
+const $mainBox = $('#main-box')
 const $selectedCountry = $('#selectedCountry');
 console.log($selectedCountry);
 // Event Listeners
@@ -36,36 +37,48 @@ function handleSubmit(evt) {
 
 function render() {
     $selectedCountry.html(`<h3>${countryData.names.name}</h3>`);
-    $main.html(`
-<section id="temperature"> <div class="header">Warm Months</div><div class="content"> ${hanldleTemperature()}</div></section>
-<section id="advise"> 
+    $mainBox.html(`
+<section class="items"> 
+        <div class="header">Warm Months</div>
+        <div class="content"> ${hanldleTemperature()}</div>
+        </section>
+<section class="items"> 
         <div class="header">Advise</div>
         <div class="content"> ${countryData.advise.UA.advise}</div>
     </section>  
-<section id="currency" class="subSection">
+<section class="items">
         <div class="header">Currency</div>
-        <div class="content"> ${countryData.currency.name}</div>
-        <div id="currencyRateHdr" class="header">Currency Rate</div>
-        <div class="content"> ${countryData.currency.rate}</div>
+        <div class="content"><p><b>Name:</b> ${countryData.currency.name}</p></div>
+        <div class="content"><p><b>Rate:</b> ${countryData.currency.rate}</p></div>
     </section>
-<section id="calling-code" class="subSection"> 
-    <div class="header">Calling Code</div>
-    <div class="content"> ${countryData.telephone.calling_code}</div>
+<section class="items"> 
+    <div class="header">Telephone</div>
+    <div class="content"><p><b>Calling-code:</b> ${countryData.telephone.calling_code}</p></div>
+    <div class="content"><p><b>Ambulance:</b> ${countryData.telephone.ambulance}</p></div>
+    <div class="content"><p><b>Police:</b> ${countryData.telephone.police}</p></div>
     </section>
-<section id="vaccination-req"> <div class="header">Vaccination Requirement</div><div class="content">${loopingVaccinationData()}</div> </section>
+<section class="items"> 
+    <div class="header">Vaccination Requirement</div>
+    <div id="vaccinationContent" class="content">${loopingVaccinationData()}</div> 
+    </section>
+<section class="items"> 
+    <div class="header">Electricity</div>
+    <div class="content"><p><b>Frequency:</b> ${countryData.electricity.frequency}</p></div>
+    <div class="content"><p><b>Voltage:</b> ${countryData.electricity.voltage}</p></div>
+    </section>
 
 `);
 }
 
-let vaccinationData = "";
+
 
 function loopingVaccinationData() {
-
+    let vaccinationData = "";
     if (countryData.vaccinations.length === 0) {
         return 'No data available'
     } else {
         countryData.vaccinations.forEach(function (element) {
-            let elementData = `<p>${element.name}: ${element.message}</p>`;
+            let elementData = `<p><b>${element.name}:</b> ${element.message}</p>`;
             vaccinationData = elementData + vaccinationData;
             console.log(elementData);
         })
