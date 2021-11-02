@@ -13,10 +13,34 @@ header{
     font-size: 1.56rem;  
 }
 
+form {
+    height:50px;
+    align-items: center;
+    padding:0.63rem;
+    color:#5680E9;
+}
+
 label {
     font-weight: bold;
     color: black;
     font-size: 1.25rem;
+}
+#submit {
+    background-color: #418cfc;
+    color: white; 
+    border: none;
+    padding:3px 19px;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: Helvetica, sans-serif;
+    cursor: pointer;
+    height: 32px;
+}
+
+#inputCountry{
+    border:solid #418cfc;
+    width:180px;
+    height: 30px; 
 }
 
 h3 {
@@ -54,13 +78,6 @@ gap:3.13rem 6.25rem;
 margin-top:5em;
 }
 
-form {
- height:50px;
- align-items: center;
- padding:0.63rem;
- color:#5680E9;
-
-}
 div {
     display:flex;
     flex-direction:column;
@@ -100,56 +117,24 @@ p {
     padding-top: 0.5em;
 }
 
-
-#submit {
-    background-color: #418cfc;
-    color: white; 
-    border: none;
-    padding:3px 19px;
-    font-weight: bold;
-    font-size: 18px;
-    font-family: Helvetica, sans-serif;
-    cursor: pointer;
-    height: 32px;
-}
-
-#inputCountry{
-    border:solid #418cfc;
-    width:180px;
-    height: 30px; 
-   }
-
 footer {
     border: solid black;
     text-align:center;
     color: white;
     background-color: #04409b;
+    font-family: helvetica;
 }
   
-
-
-
 /*@media (max-width: 764px) {
-    main {
+
+
+    #main-box {
+        display: flex;
         flex-direction: column;
     }
-    #temperature{
-        width:auto;
-        height:auto;
+    .items{
+        width:18rem;
+        height:3rem;
     }
-    #advise {
-        width:auto;
-        height:auto;
-    }
-
-    #currency {
-        width:auto;
-        height:auto;
     
-    }
-
-    currency-rate{
-        width:auto;
-        height:auto;   
-    }
 }*/
