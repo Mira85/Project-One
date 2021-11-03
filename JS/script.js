@@ -20,12 +20,12 @@ function handleSubmit(evt) {
     evt.preventDefault();
     country = $inputCountry.val();
     if (country === '') {
-        alert('Enter Country Name')
+        $('#missingInput').show();
     } else {
+        $('#missingInput').hide();
         $.ajax(`${BASE_URL}${country}?format=json`).then(function (data) {
             // Getting data which is a list and converting to an JS object
             countryData = JSON.parse(data);
-            console.log(countryData)
             // success callback function
             render();
         }, function (error) {
