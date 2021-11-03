@@ -14,7 +14,7 @@ header{
 }
 
 form {
-    height:50px;
+    height:3.12rem;
     align-items: center;
     padding:0.63rem;
     color:#5680E9;
@@ -29,18 +29,18 @@ label {
     background-color: #418cfc;
     color: white; 
     border: none;
-    padding:3px 19px;
+    padding:0.19rem 1.19rem;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 1.13rem;
     font-family: Helvetica, sans-serif;
     cursor: pointer;
-    height: 32px;
+    height: 2rem;
 }
 
 #inputCountry{
     border:solid #418cfc;
-    width:180px;
-    height: 30px; 
+    width:11.25rem;
+    height: 1.88rem; 
 }
 
 h3 {
@@ -75,7 +75,7 @@ width:80rem;
 color: #999999;
 font-family:Helvetica;
 gap:3.13rem 6.25rem;
-margin-top:5em;
+margin-top:5rem;
 }
 
 div {
@@ -88,10 +88,10 @@ div {
     display: flex;
     flex-direction: column;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 0.31rem;
     width: 18.75rem;
     height: 16.5rem;
-    box-shadow: 5px 3px 5px grey;
+    box-shadow: 0.31rem 0.19rem 0.31rem grey;
     overflow: scroll;
 }
 
@@ -109,16 +109,15 @@ p {
 .header {
     font-weight: bold;
     font-family: Helvetica;
-    margin-bottom:18px;
+    margin-bottom:1.13rem;
     color: black;
     background-color: #F2F2F2;
-    height:30px;
+    height:1.88rem;
     text-align: center;
-    padding-top: 0.5em;
+    padding-top: 0.5rem;
 }
 
 footer {
-    border: solid black;
     text-align:center;
     color: white;
     background-color: #04409b;

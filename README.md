@@ -16,8 +16,9 @@ This simple web application provides some important information for visiting any
 
 ## Getting started
 
-Click here to see the deployed app!
+[Click Here](https://happy-journey.netlify.app/) to see the deployed app!
 
 ## Future Enhancements
 
+- Have a drop down menu for countries. Possible source of data can be from this API: http://api.worldbank.org/v2/country.
 - User can store their favorite destination to localstorage.
