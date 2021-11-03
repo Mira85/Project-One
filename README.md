@@ -1,6 +1,6 @@
 # Happy Journey
 
-This simple web application provides some important information for visiting any country in the world. It gives advise for travel, provides months with warm temperature, requirement for vaccination to visit the country, and information on currency and electricity.
+This web application provides important travel related information for any country in the world. It provides months with warm temperatures, requirement for vaccinations to visit the country, and information on currency and electricity.
 
 ## Technologies Used
 
